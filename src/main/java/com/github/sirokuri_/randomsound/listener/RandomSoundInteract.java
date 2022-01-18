@@ -24,7 +24,7 @@ public class RandomSoundInteract implements Listener {
         Sound sound = plugin.getRandomSound();
         Location location = player.getLocation();
         if(!(block.getType() == Material.AIR)){
-            player.playSound(location,sound,10,1);
+            player.playSound(location,sound,1,1);
         }
     }
 }
