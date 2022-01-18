@@ -16,7 +16,7 @@ public final class RandomSound extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        // プラグイン読み込んだ時に行う処理
         getServer().getPluginManager().registerEvents(new RandomSoundJoin(this), this);
         getServer().getPluginManager().registerEvents(new RandomSoundInteract(this), this);
     }
@@ -27,10 +27,10 @@ public final class RandomSound extends JavaPlugin {
     }
 
     public Sound getRandomSound(){
-        Sound sound = null;
-        if(isValidSound(sound)) {
+        Sound sound;
+        do {
             sound = soundList.get(rand.nextInt(soundList.size()));
-        }
+        } while (!isValidSound(sound));
         return sound;
     }
 
