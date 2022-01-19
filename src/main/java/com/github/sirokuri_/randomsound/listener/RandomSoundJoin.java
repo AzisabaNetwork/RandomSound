@@ -27,7 +27,7 @@ public class RandomSoundJoin implements Listener {
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                player.playSound(location,sound,1,1);
+                player.playSound(location,sound,10,1);
                 timer.cancel();
             }
         };
